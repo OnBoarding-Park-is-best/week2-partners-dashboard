@@ -19,6 +19,7 @@ module.exports = {
   webpack: {
     // 절대경로 지정
     alias: {
+      '~assets': path.resolve(__dirname, 'src/assets'),
       '~api': path.resolve(__dirname, 'src/api'),
       '~components': path.resolve(__dirname, 'src/components'),
       '~constants': path.resolve(__dirname, 'src/constants'),
@@ -31,6 +32,7 @@ module.exports = {
   jest: {
     configure: {
       moduleNameMapper: {
+        '^\\~assets/(.*)$': '<rootDir>/src/assets/$1',
         '^\\~api/(.*)$': '<rootDir>/src/api/$1',
         '^\\~components/(.*)$': '<rootDir>/src/components/$1',
         '^\\~constants/(.*)$': '<rootDir>/src/constants/$1',
