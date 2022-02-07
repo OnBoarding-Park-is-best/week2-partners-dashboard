@@ -12,6 +12,7 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "craco-alias": "^3.0.1",
+    "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -25,7 +26,9 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "mock": "json-server json-server/db.json",
+    "heroku-postbuild": "craco build"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +68,7 @@
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.18",
     "@types/styled-components": "^5.1.22",
+    "cross-env": "^7.0.3",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.5.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
