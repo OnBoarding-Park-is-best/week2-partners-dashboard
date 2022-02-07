@@ -53,10 +53,10 @@ MenuContent.defaultProps = {
 };
 
 const NavBar = () => {
-  const [isMenuEnabled, setMenuEnabled] = useState<boolean>(false);
+  const [isMenuShowing, setMenuShowing] = useState<boolean>(false);
 
   const handleMenuClick = useCallback(() => {
-    setMenuEnabled((prev) => !prev);
+    setMenuShowing((prev) => !prev);
   }, []);
 
   return (
@@ -84,7 +84,7 @@ const NavBar = () => {
         <PCMenu>
           <MenuContent name="A 가공 업체" />
         </PCMenu>
-        <Slider isShowing={isMenuEnabled}>
+        <Slider isShowing={isMenuShowing}>
           <SliderTitle>
             <Logo href="/#">
               <img src={colorlogo} alt="CAPA 파트너스" />
@@ -94,7 +94,9 @@ const NavBar = () => {
             <MenuContent name="파트너정밀가공" isSlider />
           </SliderContent>
         </Slider>
-        <Backdrop onClick={handleMenuClick} isShowing={isMenuEnabled} />
+        {isMenuShowing && (
+          <Backdrop onClick={handleMenuClick} isShowing={isMenuShowing} />
+        )}
       </Nav>
     </>
   );
@@ -182,7 +184,7 @@ const Backdrop = styled.div<SliderProps>`
   display: none;
 
   @media screen and (max-width: 767px) {
-    z-index: ${({ isShowing }) => (isShowing ? 1000 : -1000)};
+    z-index: 1000;
     display: block;
     position: absolute;
     left: 0;
