@@ -7,7 +7,7 @@ const middlewares = jsonServer.defaults({
     static: path.resolve(__dirname + '/../build/')
 });
 
-const port = process.env.REACT_APP_API_PORT || 5000;
+const port = process.env.REACT_APP_API_PORT || 3001;
 
 server.use(middlewares);
 
