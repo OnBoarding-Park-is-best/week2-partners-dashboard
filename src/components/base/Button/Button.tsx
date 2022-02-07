@@ -28,7 +28,7 @@ const Button = ({ children, isPrimary = false, ...props }: ButtonProp) => {
 
 const ButtonContainer = styled.button`
   display: flex;
-  justify-content: column;
+  justify-content: center;
   align-items: center;
   height: 32px;
   padding: 6px 12px;
