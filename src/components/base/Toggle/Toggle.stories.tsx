@@ -7,23 +7,19 @@ export default {
   component: Toggle,
 } as ComponentMeta<typeof Toggle>;
 
-const Template: ComponentStory<typeof Toggle> = (args) => <Toggle {...args} />;
+const Template: ComponentStory<typeof Toggle> = ({ active }) => {
+  const [isActive, setIsActive] = useState<boolean>(active);
+  return (
+    <Toggle onClick={() => setIsActive((prev) => !prev)} active={isActive} />
+  );
+};
 
 export const True = Template.bind({});
 True.args = {
-  onClick: () => {},
   active: true,
 };
 
 export const False = Template.bind({});
 False.args = {
-  onClick: () => {},
   active: false,
-};
-
-export const onClick = () => {
-  const [isActive, setIsActive] = useState<boolean>(false);
-  return (
-    <Toggle onClick={() => setIsActive((prev) => !prev)} active={isActive} />
-  );
 };

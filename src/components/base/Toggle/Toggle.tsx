@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface IProp {
   onClick: React.MouseEventHandler;
@@ -9,7 +9,7 @@ interface IProp {
 const Toggle = ({ onClick, active }: IProp) => {
   return (
     <Wrapper onClick={onClick}>
-      <Track />
+      <Track active={active} />
       <Knob active={active} />
     </Wrapper>
   );
@@ -25,27 +25,35 @@ const Wrapper = styled.div`
   height: 20px;
 `;
 
-const Track = styled.div`
+const Track = styled.div<{ active: boolean }>`
   position: absolute;
   top: 3px;
   left: 3px;
-  right: 0;
   width: 34px;
   height: 14px;
   border-radius: 34px;
-  background: #c2c2c2;
+  background: ${(props) => (props.active ? '#BBDEFB' : '#c2c2c2')};
 `;
 
 const Knob = styled.div<{ active: boolean }>`
   position: absolute;
   top: 0px;
-  right: ${(props) => (props.active ? '-4px' : '17px')};
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #f5f5f5;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
+  ${(props) =>
+    props.active
+      ? css`
+          right: -4px;
+          background: #2196f3;
+        `
+      : css`
+          right: 17px;
+          background: #f5f5f5;
+        `}
 `;
 
 export default Toggle;
