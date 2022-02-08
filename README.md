@@ -13,10 +13,9 @@
 
 | | 팀원 | 역할 | 
 |------------------------------------------------------------ |----------------------------------------------------- |--------------------- | 
-| ![](https://avatars.githubusercontent.com/u/77766769?s=25) | 박정훈 [@Junghoon-P](https://github.com/Junghoon-P) | (팀장)  |
+| ![](https://avatars.githubusercontent.com/u/68905615?s=25) | 고동현 [@brad-go](https://github.com/brad-go) | (팀장) 드롭다운 메뉴, 토글   |
 | ![](https://avatars.githubusercontent.com/u/71081893?s=25) | 이소진 [@krungy](https://github.com/krungy) | Button들, 요청서 카드 구현 | 
 | ![](https://avatars.githubusercontent.com/u/57004991?s=25) | 최효정 [@hyo-choi](https://github.com/hyo-choi) | Navbar 반응형, 기본 화면 구현 | 
-| ![](https://avatars.githubusercontent.com/u/68905615?s=25) | 고동현 [@brad-go](https://github.com/brad-go) | 드롭다운 메뉴, 토글   |
 
 <br>
 
@@ -30,7 +29,11 @@
    ```bash
    yarn install
    ```
-3. 아래 커맨드로 프로젝트를 실행합니다.
+3. 아래 커맨드로 mock server를 구동합니다.
+   ```bash
+   yarn mock
+   ```
+4. 아래 커맨드로 프로젝트를 실행합니다.
    ```bash
    yarn start
    ```
@@ -99,7 +102,7 @@
 
 ### 공통 작업
 
-:white_check_mark: 마크업 및 스타일링 :white_check_mark: 컴포넌트 조합 및 로직 구현 <br>
+:white_check_mark: 마크업 및 스타일링  :white_check_mark: 컴포넌트 조합 및 로직 구현 <br>
 
 ## 📂 디렉토리 구조
 
