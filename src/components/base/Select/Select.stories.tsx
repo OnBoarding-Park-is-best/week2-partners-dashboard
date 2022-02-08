@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select, { OptionType } from './Select';
 
@@ -10,12 +10,8 @@ export default {
 const Template: ComponentStory<typeof Select> = ({
   title,
   options,
-  isChecked,
-  checkedOptionNumber,
   onChange,
 }) => {
-  const [checkOption, setCheckOption] = useState(isChecked);
-  const [checkedOptionNum, setCheckedOptionNum] = useState(checkedOptionNumber);
   const [optionList, setOptionList] = useState(options);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,26 +24,7 @@ const Template: ComponentStory<typeof Select> = ({
     );
   };
 
-  useEffect(() => {
-    const checkedOptionStates = optionList.map((option) => {
-      return option.checked;
-    });
-    const checkedOptionNumber = checkedOptionStates.filter(
-      (option) => option === true,
-    ).length;
-    setCheckOption(checkedOptionNumber > 0 ? true : false);
-    setCheckedOptionNum(checkedOptionNumber);
-  }, [optionList]);
-
-  return (
-    <Select
-      title={title}
-      options={optionList}
-      isChecked={checkOption}
-      checkedOptionNumber={checkedOptionNum}
-      onChange={handleChange}
-    />
-  );
+  return <Select title={title} options={optionList} onChange={handleChange} />;
 };
 
 const METHOD_OPTIONS: OptionType[] = [

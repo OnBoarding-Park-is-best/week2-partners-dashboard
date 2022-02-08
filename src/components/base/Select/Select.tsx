@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import type { MethodType, MaterialType } from '~types/index';
 import { Option } from './Option';
 import { Arrow } from './Icons';
@@ -12,34 +12,36 @@ export type OptionType = {
 interface SelectProps {
   title: string;
   options: OptionType[];
-  isChecked: boolean;
-  checkedOptionNumber: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Select = ({
-  title,
-  options,
-  isChecked,
-  checkedOptionNumber,
-  onChange,
-}: SelectProps) => {
+const Select = ({ title, options, onChange }: SelectProps) => {
   const [isMouseOn, setIsMouseOn] = useState(false);
-  const onMouseEnter = (e: React.MouseEvent) => {
+
+  const onMouseEnter = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     setIsMouseOn(true);
-  };
-  const onMouseLeave = (e: React.MouseEvent) => {
+  }, []);
+  const onMouseLeave = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     setIsMouseOn(false);
-  };
+  }, []);
+
+  const isChecked = options.some((option) => option.checked);
+  const countChecked = useCallback(() => {
+    const count = options.reduce(
+      (prev, cur) => prev + (cur.checked ? 1 : 0),
+      0,
+    );
+    return count ? `(${count})` : '';
+  }, [options]);
 
   return (
     <Container onMouseEnter={onMouseEnter}>
       <Wrapper checked={isChecked}>
         <SelectTitle>
           {title}
-          {checkedOptionNumber > 0 && `(${checkedOptionNumber})`}
+          {countChecked()}
         </SelectTitle>
         <Arrow checked={isChecked} />
       </Wrapper>
