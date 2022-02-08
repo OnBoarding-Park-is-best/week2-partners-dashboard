@@ -4,6 +4,7 @@
 ## 🚀 배포
 
 🔗 **과제물**(netlify): <br>
+🔗 **Storybook**: https://develop--620233129c4ef3003ab91866.chromatic.com/
 
 ## 🧑‍🤝‍🧑 팀 소개
 
