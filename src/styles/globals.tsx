@@ -117,6 +117,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
+  color: #323d45;
   font-size: 14px;
   background-color: #fff;
 }

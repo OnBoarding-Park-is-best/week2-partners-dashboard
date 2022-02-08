@@ -237,6 +237,7 @@ const SliderContent = styled.div`
     font-family: 'Noto Sans KR';
     font-weight: 500;
     font-size: 1rem;
+    color: inherit;
     svg {
       position: relative;
       top: 2px;

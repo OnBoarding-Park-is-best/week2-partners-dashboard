@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS } from '~constants/index';
 import { NavBar } from '~components/domain';
 import { Select, Toggle } from '~components/base';
 import useApp from '~hooks/useApp';
@@ -78,13 +77,11 @@ const Wrapper = styled.div`
 
 const DashboardTitleContainer = styled.div`
   h1 {
-    color: ${COLORS.text_default};
     font-weight: 600;
     font-size: 1.42rem;
     line-height: 1.6em;
   }
   p {
-    color: ${COLORS.text_default};
     font-weight: 400;
     font-size: 1.14rem;
     line-height: 1.5em;
@@ -117,7 +114,6 @@ const ToggleSection = styled.div`
 
 const ToggleText = styled.span`
   margin-left: 16px;
-  color: ${COLORS.text_default};
 `;
 
 const ContentContainer = styled.div`

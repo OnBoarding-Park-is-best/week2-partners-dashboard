@@ -58,7 +58,6 @@ const ItemCardContainer = styled.div`
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
-  color: ${COLORS.text_default};
   :hover {
     box-shadow: 0 0 0 2px ${COLORS.blue} inset;
   }
