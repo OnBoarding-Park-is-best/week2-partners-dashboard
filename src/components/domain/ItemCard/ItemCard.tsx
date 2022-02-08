@@ -1,20 +1,9 @@
 import styled from 'styled-components';
 import { Button } from '~components/base';
 import { COLORS } from '~constants/index';
-interface requestInfoProp {
-  id: number;
-  title: string;
-  client: string;
-  due: string;
-  count: number;
-  amount: number;
-  method: string[];
-  material: string[];
-  status: string;
-}
-
+import { ApiReturnType } from '~types/index';
 interface ItemCardProp {
-  requestInfo: requestInfoProp;
+  requestInfo: ApiReturnType;
 }
 
 const ItemCard = ({ requestInfo, ...props }: ItemCardProp) => {
