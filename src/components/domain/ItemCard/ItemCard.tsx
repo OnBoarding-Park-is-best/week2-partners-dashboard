@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '~components/base';
-
+import { COLORS } from '~constants/index';
 interface requestInfoProp {
   id: number;
   title: string;
@@ -63,12 +63,13 @@ const ItemCardContainer = styled.div`
   padding: 24px 16px;
   max-width: 366px;
   height: 356px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${COLORS.grey_border};
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
+  color: ${COLORS.text_default};
   :hover {
-    box-shadow: 0 0 0 2px #2196f3 inset;
+    box-shadow: 0 0 0 2px ${COLORS.blue} inset;
   }
   @media screen and (max-width: 767px) {
     height: 344px;
@@ -81,7 +82,6 @@ const Title = styled.div`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
-  color: #323d45;
   margin-bottom: 4px;
 `;
 
@@ -92,14 +92,14 @@ const InBusinessContainer = styled.div`
   position: absolute;
   right: 16px;
   top: 24px;
-  background: #ffffff;
-  border: 1px solid #ffa000;
+  background: ${COLORS.white};
+  border: 1px solid ${COLORS.orange};
   box-sizing: border-box;
   border-radius: 12px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.67;
-  color: #ffa000;
+  color: ${COLORS.orange};
 `;
 
 const Text = styled.div`
@@ -117,7 +117,7 @@ const ClientText = styled(Text)`
 
 const DueText = styled(Text)`
   margin-top: 24px;
-  color: #939fa5;
+  color: ${COLORS.text_grey};
   @media screen and (max-width: 767px) {
     margin-top: 16px;
   }
@@ -132,7 +132,7 @@ const Divider = styled.hr`
   width: 100%;
   height: 1px;
   border: none;
-  background-color: #e5e5e5;
+  background-color: ${COLORS.grey_border};
   margin: 16px 0;
 `;
 
