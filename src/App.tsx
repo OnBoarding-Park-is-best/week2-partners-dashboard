@@ -73,7 +73,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
-  max-width: 1130px;
+  width: 1130px;
 `;
 
 const DashboardTitleContainer = styled.div`
@@ -124,6 +124,7 @@ const ContentContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  width: 100%;
 
   @media screen and (max-width: 767px) {
     justify-content: center;
