@@ -45,7 +45,7 @@ function App() {
             </ToggleSection>
           </FilterContainer>
           <ContentContainer>
-            {list ? handleItemCard() : '들어온 요청이 없습니다.'}
+            {list.length ? handleItemCard() : '요청 정보를 받아오는 중입니다.'}
           </ContentContainer>
         </Wrapper>
       </Container>
