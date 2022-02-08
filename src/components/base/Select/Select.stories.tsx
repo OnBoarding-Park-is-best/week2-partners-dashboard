@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Select, { IOption } from './Select';
+import Select, { OptionType } from './Select';
 
 export default {
   title: 'base/Select',
@@ -10,31 +10,66 @@ export default {
 const Template: ComponentStory<typeof Select> = ({
   title,
   options,
+  isMouseOn,
+  isChecked,
+  onMouseEnter,
+  onMouseLeave,
   onChange,
 }) => {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [checkOption, setCheckOption] = useState(isChecked);
+  const [showOptions, setShowOptions] = useState(isMouseOn);
+  const [optionList, setOptionList] = useState(options);
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selected = e.target.value;
-    setSelectedOptions((prev) =>
-      prev.includes(selected) ? prev : [...prev, selected],
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOptionList((prev) =>
+      prev.map((option) =>
+        option.id === e.target.id
+          ? { ...option, checked: !option.checked }
+          : option,
+      ),
     );
   };
 
-  return <Select title={title} options={options} onChange={handleChange} />;
+  useEffect(() => {
+    const checkedOptionStates: boolean[] = optionList.map((option) => {
+      return option.checked;
+    });
+    const checkedOptions: boolean[] = checkedOptionStates.filter(
+      (checked) => checked === true,
+    );
+    setCheckOption(checkedOptions.length > 0 ? true : false);
+  }, [optionList]);
+
+  return (
+    <Select
+      title={title}
+      options={optionList}
+      isChecked={checkOption}
+      isMouseOn={showOptions}
+      onMouseEnter={(e) => {
+        e.preventDefault();
+        setShowOptions(true);
+      }}
+      onMouseLeave={(e) => {
+        e.stopPropagation();
+        setShowOptions(false);
+      }}
+      onChange={handleChange}
+    />
+  );
 };
 
-const METHOD_OPTIONS: IOption[] = [
-  { value: '밀링', name: '밀링' },
-  { value: '선반', name: '선반' },
+const METHOD_OPTIONS: OptionType[] = [
+  { name: '밀링', id: '밀링', checked: false },
+  { name: '선반', id: '선반', checked: false },
 ];
 
-const MATERIAL_OPTIONS: IOption[] = [
-  { value: '알루미늄', name: '알루미늄' },
-  { value: '탄소강', name: '탄소강' },
-  { value: '구리', name: '구리' },
-  { value: '합금강', name: '합금강' },
-  { value: '강철', name: '강철' },
+const MATERIAL_OPTIONS: OptionType[] = [
+  { name: '알루미늄', id: '알루미늄', checked: false },
+  { name: '탄소강', id: '탄소강', checked: false },
+  { name: '구리', id: '구리', checked: false },
+  { name: '합금강', id: '합금강', checked: false },
+  { name: '강철', id: '강철', checked: false },
 ];
 
 export const Method = Template.bind({});
