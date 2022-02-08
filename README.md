@@ -3,7 +3,7 @@
 
 ## 🚀 배포
 
-🔗 **과제물**(netlify): <br>
+🔗 **과제물**(heroku): https://partners-board-park-is-best.herokuapp.com/ <br>
 🔗 **Storybook**: https://develop--620233129c4ef3003ab91866.chromatic.com/
 
 ## 🧑‍🤝‍🧑 팀 소개
@@ -14,7 +14,7 @@
 |------------------------------------------------------------ |----------------------------------------------------- |--------------------- | 
 | ![](https://avatars.githubusercontent.com/u/68905615?s=25) | 고동현 [@brad-go](https://github.com/brad-go) | (팀장) 드롭다운 메뉴, 토글   |
 | ![](https://avatars.githubusercontent.com/u/71081893?s=25) | 이소진 [@krungy](https://github.com/krungy) | Button들, 요청서 카드 구현 | 
-| ![](https://avatars.githubusercontent.com/u/57004991?s=25) | 최효정 [@hyo-choi](https://github.com/hyo-choi) | Navbar 반응형, 기본 화면 구현 | 
+| ![](https://avatars.githubusercontent.com/u/57004991?s=25) | 최효정 [@hyo-choi](https://github.com/hyo-choi) | Navbar 반응형, 기본 화면 구현, 배포 설정 | 
 
 <br>
 
@@ -28,11 +28,15 @@
    ```bash
    yarn install
    ```
-3. 아래 커맨드로 mock server를 구동합니다.
+3. 프로젝트 root 폴더에 `.env` 파일을 생성하고 아래 내용을 작성합니다.
+   ```bash
+   REACT_APP_API_URL=http://localhost:3001
+   ```
+4. 아래 커맨드로 mock server를 구동합니다.
    ```bash
    yarn mock
    ```
-4. 아래 커맨드로 프로젝트를 실행합니다.
+5. 아래 커맨드로 프로젝트를 실행합니다.
    ```bash
    yarn start
    ```
