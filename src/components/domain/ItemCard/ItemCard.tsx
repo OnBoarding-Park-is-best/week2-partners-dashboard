@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Button } from '~components/base';
 import { COLORS } from '~constants/index';
-import { ApiReturnType } from '~types/index';
+import type { ApiReturnType } from '~types/index';
 interface ItemCardProp {
   requestInfo: ApiReturnType;
 }
