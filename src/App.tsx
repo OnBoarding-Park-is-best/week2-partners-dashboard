@@ -114,7 +114,7 @@ const ToggleText = styled.span`
 
 const ContentContainer = styled.div`
   display: flex;
-  width: 100%;
+  max-width: 1130px;
   flex-wrap: wrap;
   gap: 16px;
 

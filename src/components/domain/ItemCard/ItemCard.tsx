@@ -46,11 +46,13 @@ const ItemCard = ({ requestInfo, ...props }: ItemCardProp) => {
 
 const ItemCardContainer = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
   padding: 24px 16px;
-  width: 366px;
+  max-width: 366px;
+  min-width: 320px;
   height: 356px;
   border: 1px solid ${COLORS.grey_border};
   border-radius: 4px;
