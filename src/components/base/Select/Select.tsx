@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import type { MethodType, MaterialType } from '~types/index';
 import { Option } from './Option';
 import { Arrow } from './Icons';
@@ -13,6 +13,7 @@ interface SelectProps {
   title: string;
   options: OptionType[];
   isChecked: boolean;
+  checkedOptionNumber: number;
   isMouseOn: boolean;
   onMouseEnter: (e: React.MouseEvent) => void;
   onMouseLeave: (e: React.MouseEvent) => void;
@@ -23,6 +24,7 @@ const Select = ({
   title,
   options,
   isChecked,
+  checkedOptionNumber,
   isMouseOn,
   onMouseEnter,
   onMouseLeave,
@@ -31,7 +33,10 @@ const Select = ({
   return (
     <Container onMouseEnter={onMouseEnter}>
       <Wrapper checked={isChecked}>
-        <SelectTitle>{title}</SelectTitle>
+        <SelectTitle>
+          {title}
+          {checkedOptionNumber > 0 && `(${checkedOptionNumber})`}
+        </SelectTitle>
         <Arrow checked={isChecked} />
       </Wrapper>
       {isMouseOn && (

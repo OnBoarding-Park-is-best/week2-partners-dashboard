@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select, { OptionType } from './Select';
 
@@ -10,13 +10,15 @@ export default {
 const Template: ComponentStory<typeof Select> = ({
   title,
   options,
-  isMouseOn,
   isChecked,
+  checkedOptionNumber,
+  isMouseOn,
   onMouseEnter,
   onMouseLeave,
   onChange,
 }) => {
   const [checkOption, setCheckOption] = useState(isChecked);
+  const [checkedOptionNum, setCheckedOptionNum] = useState(checkedOptionNumber);
   const [showOptions, setShowOptions] = useState(isMouseOn);
   const [optionList, setOptionList] = useState(options);
 
@@ -31,13 +33,14 @@ const Template: ComponentStory<typeof Select> = ({
   };
 
   useEffect(() => {
-    const checkedOptionStates: boolean[] = optionList.map((option) => {
+    const checkedOptionStates = optionList.map((option) => {
       return option.checked;
     });
-    const checkedOptions: boolean[] = checkedOptionStates.filter(
-      (checked) => checked === true,
-    );
-    setCheckOption(checkedOptions.length > 0 ? true : false);
+    const checkedOptionNumber = checkedOptionStates.filter(
+      (option) => option === true,
+    ).length;
+    setCheckOption(checkedOptionNumber > 0 ? true : false);
+    setCheckedOptionNum(checkedOptionNumber);
   }, [optionList]);
 
   return (
@@ -45,6 +48,7 @@ const Template: ComponentStory<typeof Select> = ({
       title={title}
       options={optionList}
       isChecked={checkOption}
+      checkedOptionNumber={checkedOptionNum}
       isMouseOn={showOptions}
       onMouseEnter={(e) => {
         e.preventDefault();
