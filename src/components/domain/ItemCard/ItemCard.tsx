@@ -33,7 +33,7 @@ const ItemCard = ({ requestInfo, ...props }: ItemCardProp) => {
         </InfoContent>
         <InfoContent>
           <Text>재료</Text>
-          <InfoValueText>{requestInfo.material}</InfoValueText>
+          <InfoValueText>{handleValueList(requestInfo.material)}</InfoValueText>
         </InfoContent>
       </DetailContainer>
       <ButtonContainer>
@@ -50,7 +50,7 @@ const ItemCardContainer = styled.div`
   align-items: flex-start;
   position: relative;
   padding: 24px 16px;
-  max-width: 366px;
+  width: 366px;
   height: 356px;
   border: 1px solid ${COLORS.grey_border};
   border-radius: 4px;

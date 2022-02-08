@@ -107,12 +107,13 @@ interface SliderProps {
 }
 
 const Nav = styled.nav`
-  position: absolute;
+  position: sticky;
   left: 0;
   top: 0;
   display: flex;
+  z-index: 3000;
   justify-content: space-between;
-  align-contents: center;
+  align-items: center;
   width: 100%;
   padding: 25px 40px;
   background-color: ${COLORS.primary_700};
@@ -184,7 +185,6 @@ const Backdrop = styled.div<SliderProps>`
   display: none;
 
   @media screen and (max-width: 767px) {
-    z-index: 1000;
     display: block;
     position: absolute;
     left: 0;
@@ -205,7 +205,7 @@ const Slider = styled.div<SliderProps>`
   }
 
   @media screen and (max-width: 767px) {
-    z-index: 1001;
+    z-index: 3001;
     position: absolute;
     left: 0;
     top: 0;

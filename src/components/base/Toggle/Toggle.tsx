@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 37px;
   height: 20px;
+  cursor: pointer;
 `;
 
 const Track = styled.div<{ active: boolean }>`
@@ -43,7 +44,6 @@ const Knob = styled.div<{ active: boolean }>`
   border-radius: 50%;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
   transition: 0.3s ease-in-out;
-  cursor: pointer;
   ${(props) =>
     props.active
       ? css`
