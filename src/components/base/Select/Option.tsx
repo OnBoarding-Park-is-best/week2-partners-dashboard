@@ -43,6 +43,7 @@ const Wrapper = styled.div`
   background: #fff;
   border: 1px solid #939fa5;
   border-radius: 4px;
+  cursor: pointer;
 `;
 
 const OptionList = styled.div`
@@ -53,6 +54,7 @@ const OptionList = styled.div`
 const Label = styled.label`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
@@ -86,6 +88,7 @@ const StyledCheckbox = styled.div<{ checked: boolean }>`
           border: 2px solid #939fa5;
         `}
   transition: all 0.5s;
+  cursor: pointer;
 `;
 
 const Content = styled.span`

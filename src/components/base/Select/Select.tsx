@@ -52,6 +52,7 @@ const Select = ({
 
 const Container = styled.div`
   position: relative;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div<{ checked: boolean }>`
