@@ -21,32 +21,34 @@ function App() {
     <>
       <NavBar />
       <Container>
-        <DashboardTitleContainer>
-          <h1>들어온 요청</h1>
-          <p>파트너님에게 딱 맞는 요청서를 찾아보세요.</p>
-        </DashboardTitleContainer>
-        <FilterContainer>
-          <Filter>
-            <Select
-              title="가공방식"
-              options={methodList}
-              onChange={handleFilterChange}
-            />
-            <Select
-              title="재료"
-              options={materialList}
-              onChange={handleFilterChange}
-            />
-            {handleFilterReset()}
-          </Filter>
-          <ToggleSection>
-            <Toggle onClick={handleToggle} active={inBusiness} />
-            <ToggleText>상담중인 요청만 보기</ToggleText>
-          </ToggleSection>
-        </FilterContainer>
-        <ContentContainer>
-          {list ? handleItemCard() : '들어온 요청이 없습니다.'}
-        </ContentContainer>
+        <Wrapper>
+          <DashboardTitleContainer>
+            <h1>들어온 요청</h1>
+            <p>파트너님에게 딱 맞는 요청서를 찾아보세요.</p>
+          </DashboardTitleContainer>
+          <FilterContainer>
+            <Filter>
+              <Select
+                title="가공방식"
+                options={methodList}
+                onChange={handleFilterChange}
+              />
+              <Select
+                title="재료"
+                options={materialList}
+                onChange={handleFilterChange}
+              />
+              {handleFilterReset()}
+            </Filter>
+            <ToggleSection>
+              <Toggle onClick={handleToggle} active={inBusiness} />
+              <ToggleText>상담중인 요청만 보기</ToggleText>
+            </ToggleSection>
+          </FilterContainer>
+          <ContentContainer>
+            {list ? handleItemCard() : '들어온 요청이 없습니다.'}
+          </ContentContainer>
+        </Wrapper>
       </Container>
     </>
   );
@@ -54,9 +56,7 @@ function App() {
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
+  justify-content: center;
   padding: 40px 155px;
   width: 100%;
   height: calc(100vh - 80px);
@@ -66,6 +66,14 @@ const Container = styled.div`
     height: calc(100vh - 48px);
     padding: 24px 20px;
   }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 1130px;
 `;
 
 const DashboardTitleContainer = styled.div`
@@ -114,7 +122,6 @@ const ToggleText = styled.span`
 
 const ContentContainer = styled.div`
   display: flex;
-  max-width: 1130px;
   flex-wrap: wrap;
   gap: 16px;
 
