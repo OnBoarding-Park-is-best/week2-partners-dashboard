@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "node json-server/index.js",
+    "start:dev": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",

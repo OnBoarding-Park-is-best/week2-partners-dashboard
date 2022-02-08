@@ -38,7 +38,7 @@
    ```
 5. 아래 커맨드로 프로젝트를 실행합니다.
    ```bash
-   yarn start
+   yarn start:dev
    ```
 
 <br>
