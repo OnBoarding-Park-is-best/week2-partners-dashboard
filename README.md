@@ -9,7 +9,14 @@
 
 ### 저희는 Team **박이최고** 입니다.
 
-팀원들의 성을 차례로 읽어보세요! | | 팀원 | 역할 | |------------------------------------------------------------ |----------------------------------------------------- |--------------------- | | ![](https://avatars.githubusercontent.com/u/77766769?s=25) | 박정훈 [@Junghoon-P](https://github.com/Junghoon-P) | (팀장) 상품 카테고리 선택 컴포넌트, 필터 태그 검색 컴포넌트 / Button 컴포넌트 | | ![](https://avatars.githubusercontent.com/u/71081893?s=25) | 이소진 [@krungy](https://github.com/krungy) | 상품 정보 고시 컴포넌트, 이미지 업로드 컴포넌트 / Input, Toggle, Icon 컴포넌트 | | ![](https://avatars.githubusercontent.com/u/57004991?s=25) | 최효정 [@hyo-choi](https://github.com/hyo-choi) | 상품 옵션 컴포넌트, 페이지 레이아웃 구성, 네비게이션 바 / Content title, Content container 컴포넌트 | | ![](https://avatars.githubusercontent.com/u/68905615?s=25) | 고동현 [@brad-go](https://github.com/brad-go) | 상품 노출 및 판매, 배송, 혜택과 기타 설정 컴포넌트 / CheckBox, Radio, Date 컴포넌트 |
+팀원들의 성을 차례로 읽어보세요!
+
+| | 팀원 | 역할 | 
+|------------------------------------------------------------ |----------------------------------------------------- |--------------------- | 
+| ![](https://avatars.githubusercontent.com/u/77766769?s=25) | 박정훈 [@Junghoon-P](https://github.com/Junghoon-P) | (팀장)  |
+| ![](https://avatars.githubusercontent.com/u/71081893?s=25) | 이소진 [@krungy](https://github.com/krungy) | Button들, 요청서 카드 구현 | 
+| ![](https://avatars.githubusercontent.com/u/57004991?s=25) | 최효정 [@hyo-choi](https://github.com/hyo-choi) | Navbar 반응형, 기본 화면 구현 | 
+| ![](https://avatars.githubusercontent.com/u/68905615?s=25) | 고동현 [@brad-go](https://github.com/brad-go) | 드롭다운 메뉴, 토글   |
 
 <br>
 
