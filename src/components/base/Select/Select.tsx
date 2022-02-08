@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import type { MethodType, MaterialType } from '~types/index';
 import { Option } from './Option';
 import { Arrow } from './Icons';
@@ -14,9 +14,6 @@ interface SelectProps {
   options: OptionType[];
   isChecked: boolean;
   checkedOptionNumber: number;
-  isMouseOn: boolean;
-  onMouseEnter: (e: React.MouseEvent) => void;
-  onMouseLeave: (e: React.MouseEvent) => void;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -25,11 +22,18 @@ const Select = ({
   options,
   isChecked,
   checkedOptionNumber,
-  isMouseOn,
-  onMouseEnter,
-  onMouseLeave,
   onChange,
 }: SelectProps) => {
+  const [isMouseOn, setIsMouseOn] = useState(false);
+  const onMouseEnter = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMouseOn(true);
+  };
+  const onMouseLeave = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMouseOn(false);
+  };
+
   return (
     <Container onMouseEnter={onMouseEnter}>
       <Wrapper checked={isChecked}>

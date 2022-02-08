@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select, { OptionType } from './Select';
 
@@ -12,14 +12,10 @@ const Template: ComponentStory<typeof Select> = ({
   options,
   isChecked,
   checkedOptionNumber,
-  isMouseOn,
-  onMouseEnter,
-  onMouseLeave,
   onChange,
 }) => {
   const [checkOption, setCheckOption] = useState(isChecked);
   const [checkedOptionNum, setCheckedOptionNum] = useState(checkedOptionNumber);
-  const [showOptions, setShowOptions] = useState(isMouseOn);
   const [optionList, setOptionList] = useState(options);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,15 +45,6 @@ const Template: ComponentStory<typeof Select> = ({
       options={optionList}
       isChecked={checkOption}
       checkedOptionNumber={checkedOptionNum}
-      isMouseOn={showOptions}
-      onMouseEnter={(e) => {
-        e.preventDefault();
-        setShowOptions(true);
-      }}
-      onMouseLeave={(e) => {
-        e.stopPropagation();
-        setShowOptions(false);
-      }}
       onChange={handleChange}
     />
   );

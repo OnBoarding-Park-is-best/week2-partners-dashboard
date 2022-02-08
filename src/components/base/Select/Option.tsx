@@ -1,4 +1,3 @@
-import type { MethodType, MaterialType } from '~types/index';
 import { CheckIcon } from './Icons';
 import { OptionType } from './Select';
 import styled, { css } from 'styled-components';
