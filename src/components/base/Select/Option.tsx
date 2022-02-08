@@ -1,6 +1,6 @@
 import { CheckIcon } from './Icons';
-import { OptionType } from './Select';
 import styled, { css } from 'styled-components';
+import type { OptionType } from '~types/index';
 
 interface OptionProps {
   options: OptionType[];
@@ -43,11 +43,13 @@ const Wrapper = styled.div`
   border: 1px solid #939fa5;
   border-radius: 4px;
   cursor: pointer;
+  z-index: 1000;
 `;
 
 const OptionList = styled.div`
   display: flex;
   align-items: center;
+  background: #fff;
 `;
 
 const Label = styled.label`

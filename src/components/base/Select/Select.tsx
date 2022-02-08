@@ -1,14 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import type { MethodType, MaterialType } from '~types/index';
+import styled, { css } from 'styled-components';
+import type { OptionType } from '~types/api';
 import { Option } from './Option';
 import { Arrow } from './Icons';
-import styled, { css } from 'styled-components';
-
-export type OptionType = {
-  name: MethodType | MaterialType;
-  id: MethodType | MaterialType;
-  checked: boolean;
-};
 interface SelectProps {
   title: string;
   options: OptionType[];
@@ -26,6 +20,11 @@ const Select = ({ title, options, onChange }: SelectProps) => {
     e.stopPropagation();
     setIsMouseOn(false);
   }, []);
+  // const [isClicked, setIsClicked] = useState(false);
+
+  // const onClick = useCallback((e: React.MouseEvent) => {
+  //   setIsClicked((prev) => !prev);
+  // }, []);
 
   const isChecked = options.some((option) => option.checked);
   const countChecked = useCallback(() => {
@@ -62,13 +61,12 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div<{ checked: boolean }>`
-  position: absolute;
   display: flex;
   align-items: center;
   padding: 2px 10px;
   border: 1px solid #939fa5;
   border-radius: 4px;
-  &: hover {
+  &:hover {
     border: 1px solid #2196f3;
   }
   ${(props) =>

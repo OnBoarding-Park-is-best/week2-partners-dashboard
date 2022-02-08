@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Select, { OptionType } from './Select';
+import type { OptionType } from '~types/index';
+import Select from './Select';
 
 export default {
   title: 'base/Select',

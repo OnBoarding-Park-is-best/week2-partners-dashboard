@@ -3,4 +3,5 @@ export type {
   MaterialType,
   StatusType,
   ApiReturnType,
+  OptionType,
 } from './api';
