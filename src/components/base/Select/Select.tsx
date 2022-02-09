@@ -20,11 +20,6 @@ const Select = ({ title, options, onChange }: SelectProps) => {
     e.stopPropagation();
     setIsMouseOn(false);
   }, []);
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // const onClick = useCallback((e: React.MouseEvent) => {
-  //   setIsClicked((prev) => !prev);
-  // }, []);
 
   const isChecked = options.some((option) => option.checked);
   const countChecked = useCallback(() => {
